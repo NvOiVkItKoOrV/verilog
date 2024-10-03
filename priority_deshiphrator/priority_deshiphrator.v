@@ -1,4 +1,4 @@
-module prioritet_deshiphrator
+module priority_deshiphrator
 (
 	input [7:0] num,
 	output [2:0] ub
