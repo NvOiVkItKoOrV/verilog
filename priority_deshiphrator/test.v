@@ -14,19 +14,19 @@ wire [2:0] check1 = 6;
 wire [2:0] check2 = 3;
 wire [2:0] check3 = 0;
 
-priority_deshiphrator test1_prioritet_decypher
+priority_deshiphrator test1_priority_deshiphrator
 (
 	.num	(num_test1),
 	.ub	(res1)
 );
 
-priority_deshiphrator test2_prioritet_decypher
+priority_deshiphrator test2_priority_deshiphrator
 (
 	.num	(num_test2),
 	.ub	(res2)
 );
 
-priority_deshiphrator test3_prioritet_decypher
+priority_deshiphrator test3_priority_deshiphrator
 (
 	.num	(num_test3),
 	.ub	(res3)
