@@ -1,35 +1,26 @@
-`include "priority_deshiphrator.v"
+`timescale 1ns/1ps
+
+
+
 
 module top();
 
-wire [7:0] num_test1 = 8'b01001100;
-wire [7:0] num_test2 = 8'b00001011;
-wire [7:0] num_test3 = 8'b00000001;
-
-wire [2:0] res1;
-wire [2:0] res2;
-wire [2:0] res3;
-
-wire [2:0] check1 = 6;
-wire [2:0] check2 = 3;
-wire [2:0] check3 = 0;
+reg [7:0] num_test1;
 
 priority_deshiphrator test1_priority_deshiphrator
 (
-	.num	(num_test1),
-	.ub	(res1)
+	.num	(num_test1)
 );
 
-priority_deshiphrator test2_priority_deshiphrator
-(
-	.num	(num_test2),
-	.ub	(res2)
-);
+initial begin
+$dumpfile("out.vcd");
+$dumpvars(0, top);
+repeat (30) begin
+	#2;
+	num_test1 = $random;
+end
 
-priority_deshiphrator test3_priority_deshiphrator
-(
-	.num	(num_test3),
-	.ub	(res3)
-);
+$finish;
+end
 
 endmodule
